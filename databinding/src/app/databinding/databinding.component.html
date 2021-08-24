@@ -7,6 +7,12 @@
         <p>Resultado = {{2 + 2}}</p>
         <p>Resultado errado = {{2 + 2 + getValor()}}</p>
         <h4>Curso de Angular é bom?</h4>
-        <p>Resposta = {{cursoAngular && getGoodCourse()}}</p>
+        <p>Resposta = {{cursoAngular && getGoodCourse() ? "Sim" : "Não"}}</p>
+    </div>
+    <div>
+        <h3>Propriedade Binding (Property Binding)</h3>
+        <img [style.width.px]="imageWidth" src="{{imageURL}}" alt="Beautiful and clean sky">
+        <img [src]="imageURL" alt="Beautiful and clean sky">
+        <img bind-src="imageURL" alt="Beautiful and clean sky">
     </div>
 </section>
