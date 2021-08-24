@@ -41,4 +41,15 @@
             Perigo!
         </div>
     </article>
+
+    <article>
+        <h3>Eventos de Binding (Events Binding)</h3>
+        <button (click)="clickHere()" class="btn btn-primary">Clique aqui</button>
+        <br><br>
+        <input type="text" (keyup)="onKeyup($event)" (keyup.enter)="saveData(campoInput.value)" #campoInput>
+        <p>Valor atual: {{valorAtual}}</p>
+        <p>Valor salvo: {{valorSalvo}}</p>
+        <br><br>
+        <span (mouseover)="onMouseOver()" [class.highlight]="mouseover">Passe o mouse aqui - {{mouseover}}</span>
+    </article>
 </section>
