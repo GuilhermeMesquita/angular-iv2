@@ -8,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class DatabindingComponent implements OnInit {
 
   url: string = "https://faculdadeiv2.com.br";
+  cursoAngular: boolean = true;
+
+  getValor() {
+    return 1;
+  }
+
+  getGoodCourse() {
+    return true;
+  }
 
   constructor() { }
 
