@@ -1,3 +1,4 @@
+import { Pessoa } from './pessoa.model';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,6 +16,13 @@ export class DatabindingComponent implements OnInit {
   valorAtual: string = '';
   valorSalvo: string = '';
   mouseover: boolean = true;
+
+  pessoa: Pessoa = {
+    nome: "Guilherme",
+    idade: 19,
+  };
+  nome: string = "Gui Rocha";
+  idade: number = 19;
 
   getValor() {
     return 1;
@@ -40,7 +48,13 @@ export class DatabindingComponent implements OnInit {
     this.mouseover = !this.mouseover;
   }
 
-  constructor() { }
+  savePersonData() {
+    console.log(this.pessoa);
+  }
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

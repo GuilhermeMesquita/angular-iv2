@@ -52,4 +52,12 @@
         <br><br>
         <span (mouseover)="onMouseOver()" [class.highlight]="mouseover">Passe o mouse aqui - {{mouseover}}</span>
     </article>
+
+    <article>
+        <h3>Two-way Databinding</h3>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+        <p>Seu nome é: {{pessoa.nome}}, sua idade é {{pessoa.idade}}</p>
+        <button class="btn btn-primary" (click)="savePersonData()">Salvar</button>
+    </article>
 </section>
