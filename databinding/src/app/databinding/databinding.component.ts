@@ -16,6 +16,7 @@ export class DatabindingComponent implements OnInit {
   valorAtual: string = '';
   valorSalvo: string = '';
   mouseover: boolean = true;
+  nomePessoa: string = "Guilherme";
 
   pessoa: Pessoa = {
     nome: "Guilherme",

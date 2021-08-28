@@ -59,6 +59,8 @@
         <input type="text" [(ngModel)]="pessoa.idade">
         <p>Seu nome é: {{pessoa.nome}}, sua idade é {{pessoa.idade}}</p>
         <button class="btn btn-primary" (click)="savePersonData()">Salvar</button>
-        <app-input-properties></app-input-properties>
+        <br><br>
+        {{nomePessoa}}
+        <app-input-properties [nome]="nomePessoa"></app-input-properties>
     </article>
 </section>
