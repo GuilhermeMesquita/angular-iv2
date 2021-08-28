@@ -5,5 +5,62 @@
         <p>Acesse o site da faculdade iv2:{{url}}</p>
         <h4>Quanto é 2 + 2?</h4>
         <p>Resultado = {{2 + 2}}</p>
+        <p>Resultado errado = {{2 + 2 + getValor()}}</p>
+        <h4>Curso de Angular é bom?</h4>
+        <p>Resposta = {{cursoAngular && getGoodCourse() ? "Sim" : "Não"}}</p>
     </div>
+    <div>
+        <h3>Propriedade Binding (Property Binding)</h3>
+        <img [style.width.px]="imageWidth" src="{{imageURL}}" alt="Beautiful and clean sky">
+        <!-- <img [src]="imageURL" alt="Beautiful and clean sky">
+        <img bind-src="imageURL" alt="Beautiful and clean sky"> -->
+    </div>
+
+    <article>
+        <h3>Binding com Classe e Estilos (Classes Binding)</h3>
+        <select #classe (change)="0">
+            <option value="alert-success">Sucesso</option>
+            <option value="alert-info">Info</option>
+            <option value="alert-warning">Aviso</option>
+            <option value="alert-danger">Perigo</option>
+        </select>
+
+        <div class="alert {{classe.value}}">
+            Texto colorido de acordo com o alerta.
+        </div>
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+            Sucesso!
+        </div>
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+            Info!
+        </div>
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+            Aviso!
+        </div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+            Perigo!
+        </div>
+    </article>
+
+    <article>
+        <h3>Eventos de Binding (Events Binding)</h3>
+        <button (click)="clickHere()" class="btn btn-primary">Clique aqui</button>
+        <br><br>
+        <input type="text" (keyup)="onKeyup($event)" (keyup.enter)="saveData(campoInput.value)" #campoInput>
+        <p>Valor atual: {{valorAtual}}</p>
+        <p>Valor salvo: {{valorSalvo}}</p>
+        <br><br>
+        <span (mouseover)="onMouseOver()" [class.highlight]="mouseover">Passe o mouse aqui - {{mouseover}}</span>
+    </article>
+
+    <article>
+        <h3>Two-way Databinding</h3>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+        <p>Seu nome é: {{pessoa.nome}}, sua idade é {{pessoa.idade}}</p>
+        <button class="btn btn-primary" (click)="savePersonData()">Salvar</button>
+        <br><br>
+        {{nomePessoa}}
+        <app-input-properties [nome]="nomePessoa"></app-input-properties>
+    </article>
 </section>
