@@ -8,9 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InputPropertiesComponent implements OnInit {
   @Input() nome: string = "";
+
+  familia: any = [{
+    nome: "Jose",
+    idade: 23,
+  },
+  {
+    nome: "Joseph",
+    idade: 22,
+  }
+  ];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  recebeParente(parente: any) {
+    this.familia.push(parente);
   }
 
 }
