@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'databinding';
   valorInicial: number = 5;
   detectaCiclo: boolean = false;
+  // @ViewChild('campoInput') campoInputValue: ElementRef
 
 
   constructor() {
@@ -16,6 +17,7 @@ export class AppComponent {
   }
 
   mudarValor() {
+    // console.log(this.campoInputValue.nativeElement);
     this.valorInicial++;
   }
 
