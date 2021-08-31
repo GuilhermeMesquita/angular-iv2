@@ -7,13 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { InputPropertiesComponent } from './input-properties/input-properties.component';
 import { OutputPropertiesComponent } from './output-properties/output-properties.component';
+import { CicloComponent } from './ciclo/ciclo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatabindingComponent,
     InputPropertiesComponent,
-    OutputPropertiesComponent
+    OutputPropertiesComponent,
+    CicloComponent
   ],
   imports: [
     BrowserModule,
