@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-output-properties',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputPropertiesComponent implements OnInit {
 
+  @Input() recebeFamilia = [];
+  @Output() respostaFamilia = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.recebeFamilia);
+  }
+
+  incluiFamilia() {
+    this.respostaFamilia.emit({
+      "nome": "patricia",
+      "idade": 12
+    });
   }
 
 }
